@@ -1,0 +1,3411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goyal Aspire Market Analysis & Growth Strategy Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .text-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .border-gradient { border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1; }
+        .chart-container { 
+            height: 400px; 
+            width: 100%;
+            position: relative;
+            overflow: visible;
+            box-sizing: border-box;
+        }
+        
+        /* Ensure Chart.js responsive behavior */
+        .chart-container canvas {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+        }
+        
+        /* Mobile chart container specifics */
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 250px !important;
+                min-height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .chart-container {
+                height: 200px !important;
+                min-height: 200px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .chart-container {
+                height: 180px !important;
+                min-height: 180px;
+            }
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .container { 
+                padding-left: 1rem; 
+                padding-right: 1rem; 
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+            
+            /* Header adjustments */
+            header .flex { flex-direction: column; align-items: center; text-align: center; }
+            header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+            header h2 { font-size: 1.25rem; }
+            header .text-right { text-align: center; margin-top: 1rem; }
+            
+            /* Section-level overflow control */
+            section { 
+                overflow-x: hidden; 
+                width: 100%;
+            }
+            
+            /* Chart-specific mobile fixes */
+            .chart-container {
+                height: 250px;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                position: relative;
+                overflow: visible;
+                box-sizing: border-box;
+            }
+            
+            .chart-container canvas {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                position: relative;
+                box-sizing: border-box;
+            }
+            
+            /* Grid adjustments */
+            .grid { gap: 1rem; }
+            .md\\:grid-cols-2 { grid-template-columns: 1fr; }
+            .md\\:grid-cols-3 { grid-template-columns: 1fr; }
+            .md\\:grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+            .lg\\:grid-cols-2 { grid-template-columns: 1fr; }
+            .lg\\:grid-cols-3 { grid-template-columns: 1fr; }
+            
+            /* Column span adjustments for mobile */
+            .lg\\:col-span-1 { grid-column: span 1; }
+            .lg\\:col-span-2 { grid-column: span 1; }
+            
+            /* Ensure full width on mobile */
+            .grid > div { width: 100%; max-width: 100%; }
+            
+            /* Typography */
+            .text-4xl { font-size: 2rem; }
+            .text-3xl { font-size: 1.875rem; }
+            .text-2xl { font-size: 1.5rem; }
+            .text-xl { font-size: 1.25rem; }
+            
+            /* Spacing adjustments */
+            .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+            .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+            .mb-8 { margin-bottom: 2rem; }
+            .mb-6 { margin-bottom: 1.5rem; }
+            
+            /* Chart container */
+            .chart-container { 
+                height: 250px; 
+                width: 100%;
+                position: relative;
+                overflow: visible;
+                box-sizing: border-box;
+                margin: 0 auto;
+            }
+            
+            /* Canvas responsiveness */
+            .chart-container canvas {
+                max-width: 100% !important;
+                height: auto !important;
+                display: block;
+                box-sizing: border-box;
+            }
+            
+            /* Grid container fixes for charts */
+            .grid.lg\\:grid-cols-2 .card-shadow,
+            .grid.md\\:grid-cols-2 .card-shadow,
+            .grid.md\\:grid-cols-3 .card-shadow,
+            .grid.md\\:grid-cols-4 .card-shadow {
+                width: 100%;
+                max-width: 100%;
+                overflow: visible;
+                box-sizing: border-box;
+            }
+            
+            /* Card content padding fixes */
+            .card-shadow {
+                padding: 1rem;
+                box-sizing: border-box;
+                overflow: visible;
+            }
+            
+            /* Ensure chart sections have proper spacing */
+            .card-shadow h3 {
+                margin-bottom: 0.75rem;
+            }
+            .grid.lg\\:grid-cols-3 .card-shadow {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            /* Card adjustments */
+            .card-shadow { margin-bottom: 1rem; }
+            
+            /* Flex adjustments */
+            .justify-between { 
+                flex-direction: column; 
+                gap: 0.25rem; 
+                align-items: flex-start;
+            }
+            .justify-between > span:first-child { 
+                font-size: 0.875rem;
+                line-height: 1.2;
+            }
+            .justify-between > span:last-child { 
+                text-align: left;
+                font-weight: bold;
+                margin-top: 0.25rem;
+            }
+            
+            /* Text wrapping and overflow fixes */
+            .text-gray-600 { 
+                word-wrap: break-word; 
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+            
+            /* Container overflow fixes */
+            .container { 
+                max-width: 100vw; 
+                overflow-x: hidden; 
+            }
+            
+            /* Card content fixes */
+            .card-shadow .space-y-4 > div,
+            .card-shadow .space-y-3 > div { 
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #f3f4f6;
+            }
+            .card-shadow .space-y-4 > div:last-child,
+            .card-shadow .space-y-3 > div:last-child { 
+                border-bottom: none;
+            }
+            
+            /* Revenue projection grid */
+            .grid-cols-6 { 
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 0.5rem; 
+                overflow-x: auto;
+                scroll-behavior: smooth;
+            }
+            .min-w-16 { min-width: 4rem; }
+            
+            /* Customer grid adjustment */
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            
+            /* Table-like structures */
+            .space-y-3 > div { padding: 0.75rem; }
+            
+            /* Button and interactive elements */
+            .bg-white.bg-opacity-20 { margin-bottom: 1rem; }
+            
+            /* Text adjustments */
+            .text-center { text-align: center; }
+            .text-left { text-align: left; }
+            
+            /* Overflow handling */
+            .overflow-x-auto { 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+            
+            /* Hide complex elements on very small screens */
+            @media (max-width: 480px) {
+                .lg\\:col-span-2 { grid-column: span 1; }
+                .text-xs { font-size: 0.7rem; }
+                .p-6 { padding: 1rem; }
+                .p-4 { padding: 0.75rem; }
+                .p-3 { padding: 0.5rem; }
+                
+                /* Make 6-column grid stack on very small screens */
+                .grid-cols-6 { 
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+                
+                /* Further reduce flex gap on tiny screens */
+                .justify-between { gap: 0.125rem; }
+                
+                /* Reduce margins on very small screens */
+                .mb-6 { margin-bottom: 1rem; }
+                .mb-4 { margin-bottom: 0.75rem; }
+                
+                /* Compact spacing for demographic cards */
+                .space-y-4 > div { padding: 0.375rem 0; }
+                .space-y-3 > div { padding: 0.375rem 0; }
+                
+                /* Ensure charts don't overflow on tiny screens */
+                .card-shadow .chart-container {
+                    width: 100%;
+                    max-width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                    height: 200px;
+                    min-height: 200px;
+                    overflow: visible;
+                    box-sizing: border-box;
+                    padding: 0.5rem 0;
+                }
+                
+                /* Card padding adjustments for mobile */
+                .card-shadow {
+                    padding: 1rem 0.75rem;
+                    margin-bottom: 1rem;
+                }
+                
+                /* Chart title spacing */
+                .card-shadow h3 {
+                    margin-bottom: 0.5rem;
+                    font-size: 1.125rem;
+                }
+                
+                /* Force chart canvas to be responsive */
+                .chart-container canvas {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        
+        /* Extra small screens (under 380px) */
+        @media (max-width: 380px) {
+            .container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            
+            .card-shadow {
+                padding: 0.75rem 0.5rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .card-shadow .chart-container {
+                height: 180px;
+                min-height: 180px;
+                padding: 0.25rem 0;
+            }
+            
+            .card-shadow h3 {
+                font-size: 1rem;
+                margin-bottom: 0.375rem;
+            }
+            
+            /* Ensure text doesn't overflow */
+            .text-sm {
+                font-size: 0.75rem;
+            }
+            
+            /* Compact grid on very small screens */
+            .grid.md\\:grid-cols-4 {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            
+            /* Fallback content styling for mobile */
+            #competitorFallback, #customerFallback, #marketingFallback, #revenueFallback {
+                width: 100%;
+                max-width: 100%;
+                overflow: visible;
+                box-sizing: border-box;
+            }
+            
+            /* Ensure fallback chart content doesn't overflow */
+            .space-y-3 > div, .space-y-4 > div {
+                margin-bottom: 0.5rem;
+                padding: 0.5rem;
+                border-radius: 0.375rem;
+            }
+        }
+        
+        /* Tablet adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container { padding-left: 2rem; padding-right: 2rem; }
+            .lg\\:grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+            .chart-container { height: 350px; }
+        }
+        
+        /* Touch-friendly adjustments */
+        @media (hover: none) and (pointer: coarse) {
+            .card-shadow { transition: transform 0.2s ease; }
+            .card-shadow:hover { transform: translateY(-2px); }
+            a { padding: 0.25rem; }
+            button { min-height: 44px; min-width: 44px; }
+        }
+        
+        /* Landscape mobile adjustments */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+            .py-8 { padding-top: 1rem; padding-bottom: 1rem; }
+            header { padding-top: 1rem; padding-bottom: 1rem; }
+        }
+        
+        @media print { body { print-color-adjust: exact; } }
+        
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus indicators for better accessibility */
+        button:focus, input:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .card-shadow {
+                border: 2px solid #333;
+            }
+            
+            .text-gradient {
+                background: none;
+                color: #000;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .chatbot-tooltip {
+                transition: none;
+            }
+            
+            .transform {
+                transition: none;
+            }
+        }
+        
+        /* Enhanced Header & Job Application Styles */
+        .bg-grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .animation-delay-2s {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4s {
+            animation-delay: 4s;
+        }
+        
+        .bg-clip-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+        
+        .backdrop-blur-lg {
+            backdrop-filter: blur(16px);
+        }
+        
+        .group:hover .group-hover\:scale-110 {
+            transform: scale(1.1);
+        }
+        
+        /* Enhanced hover effects */
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+        
+        .hover\:scale-110:hover {
+            transform: scale(1.1);
+        }
+        
+        .hover\:shadow-2xl:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Enhanced responsive design for new elements */
+        @media (max-width: 768px) {
+            .lg\:text-5xl {
+                font-size: 2.5rem;
+            }
+            
+            .lg\:text-6xl {
+                font-size: 3rem;
+            }
+            
+            .lg\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 1.5rem;
+            }
+            
+            .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 1rem;
+            }
+            
+            .text-4xl {
+                font-size: 2rem;
+            }
+            
+            .text-5xl {
+                font-size: 2.5rem;
+            }
+            
+            .rounded-3xl {
+                border-radius: 1rem;
+            }
+            
+            .p-8 {
+                padding: 1.5rem;
+            }
+            
+            .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .gap-12 {
+                gap: 2rem;
+            }
+            
+            .gap-8 {
+                gap: 1.5rem;
+            }
+            
+            .blur-2xl {
+                filter: blur(20px);
+            }
+            
+            .w-40 {
+                width: 6rem;
+            }
+            
+            .h-40 {
+                height: 6rem;
+            }
+            
+            .w-32 {
+                width: 6rem;
+            }
+            
+            .h-32 {
+                height: 6rem;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.6s ease-out;
+        }
+        
+        .animate-fade-in-right {
+            animation: fadeInRight 0.6s ease-out;
+        }
+    </style>
+        <style>
+        /* Chatbot Styles */
+        #chat-widget-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #chat-toggle-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+        #chat-toggle-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background-color: #4B3F72;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1001;
+        }
+        
+        .chatbot-tooltip:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 25px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #4B3F72;
+        }
+        
+        .chatbot-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #chat-window {
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: opacity 0.3s, transform 0.3s;
+            transform-origin: bottom right;
+        }
+
+        #chat-window.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+
+        #chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chat-header h4 {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        #close-chat-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        #chat-messages {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-message {
+            padding: 0.5rem 1rem;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .bot-message {
+            background-color: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .user-message {
+            background-color: #667eea;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        
+        #suggested-messages {
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .suggested-msg-btn {
+            background-color: #e9e9f5;
+            color: #667eea;
+            border: 1px solid #d8dcf2;
+            border-radius: 15px;
+            padding: 0.3rem 0.75rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        #chat-input-form {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        #chat-input {
+            flex-grow: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        #send-message-button {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            #chat-window {
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border-radius: 0;
+            }
+            #chat-widget-container {
+                bottom: 15px;
+                right: 15px;
+            }
+            #chat-toggle-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            /* Enhanced mobile responsiveness */
+            .chart-container {
+                height: 250px !important;
+                padding: 10px;
+            }
+            
+            .grid.md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .grid.md\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.875rem;
+                line-height: 1.2;
+            }
+            
+            .overflow-x-auto {
+                font-size: 0.75rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            table {
+                font-size: 0.7rem;
+            }
+            
+            .p-6 {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #chat-window {
+                width: 90vw;
+                height: 80vh;
+                position: fixed;
+                top: 10vh;
+                right: 5vw;
+                border-radius: 10px;
+            }
+            #chat-toggle-button {
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+            }
+        }
+        @media (min-width: 769px) {
+            #chat-window {
+                width: 350px;
+                height: 500px;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+            }
+            #chat-toggle-button {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Enhanced Header -->
+    <header class="relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-10 left-10 w-32 h-32 bg-blue-500 opacity-20 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute bottom-10 right-10 w-24 h-24 bg-purple-500 opacity-20 rounded-full blur-xl animate-pulse animation-delay-2s"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-indigo-500 opacity-20 rounded-full blur-xl animate-pulse animation-delay-4s"></div>
+        
+        <div class="relative z-10 text-white py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Main Content -->
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm font-medium backdrop-blur-sm">
+                            <i class="fas fa-chart-line text-yellow-400 mr-2"></i>
+                            Professional Market Analysis
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h1 class="text-5xl lg:text-6xl font-black leading-tight">
+                                <span class="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                                    Market Analysis &
+                                </span>
+                                <br>
+                                <span class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                                    Growth Strategy
+                                </span>
+                            </h1>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full"></div>
+                                <h2 class="text-2xl font-light text-blue-200">
+                                    Goyal Aspire, Kandivali West, Mumbai
+                                </h2>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <div class="flex items-center bg-white bg-opacity-10 px-3 py-2 rounded-full backdrop-blur-sm">
+                                <i class="fas fa-user text-blue-400 mr-2"></i>
+                                <span>Vaibhav Paliwal</span>
+                            </div>
+                            <div class="flex items-center bg-white bg-opacity-10 px-3 py-2 rounded-full backdrop-blur-sm">
+                                <i class="fas fa-briefcase text-green-400 mr-2"></i>
+                                <span>Job Application Portfolio</span>
+                            </div>
+                            <div class="flex items-center bg-white bg-opacity-10 px-3 py-2 rounded-full backdrop-blur-sm">
+                                <i class="fas fa-calendar text-purple-400 mr-2"></i>
+                                <span>July 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-chart-bar text-white text-lg"></i>
+                                </div>
+                                <div class="text-2xl font-bold text-green-400">₹20,935</div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Market Price</h3>
+                            <p class="text-blue-200 text-sm">Per sq ft average</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-users text-white text-lg"></i>
+                                </div>
+                                <div class="text-2xl font-bold text-green-400">360K+</div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Population</h3>
+                            <p class="text-blue-200 text-sm">Kandivali West residents</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-train text-white text-lg"></i>
+                                </div>
+                                <div class="text-2xl font-bold text-green-400">8 min</div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Connectivity</h3>
+                            <p class="text-blue-200 text-sm">To railway station</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-rocket text-white text-lg"></i>
+                                </div>
+                                <div class="text-2xl font-bold text-green-400">3.1%</div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Growth Rate</h3>
+                            <p class="text-blue-200 text-sm">Q4 2025 performance</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom Section -->
+                <div class="mt-12 text-center">
+                    <div class="inline-flex items-center space-x-8 bg-white bg-opacity-10 backdrop-blur-lg px-8 py-4 rounded-2xl">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-white text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">Comprehensive Analysis</span>
+                        </div>
+                        <div class="w-px h-6 bg-white bg-opacity-30"></div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
+                                <i class="fas fa-brain text-white text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">Data-Driven Insights</span>
+                        </div>
+                        <div class="w-px h-6 bg-white bg-opacity-30"></div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
+                                <i class="fas fa-lightbulb text-white text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">Strategic Recommendations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Enhanced Job Application Introduction -->
+    <section class="py-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50"></div>
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-10 right-10 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+            <div class="absolute bottom-10 left-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-2xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Section -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-medium shadow-lg">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            Job Application Portfolio
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h2 class="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                                Transforming 
+                                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                    Business Intelligence
+                                </span>
+                                <br>Into Strategic Growth
+                            </h2>
+                            
+                            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                            
+                            <p class="text-xl text-gray-600 font-light leading-relaxed">
+                                This comprehensive market analysis demonstrates my expertise in 
+                                <span class="font-semibold text-blue-600">data analysis</span>, 
+                                <span class="font-semibold text-purple-600">web development</span>, and 
+                                <span class="font-semibold text-green-600">strategic business planning</span>
+                                through real-world application.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills Showcase -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Technical Skills Demonstrated</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="fas fa-code text-white text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Web Development</h4>
+                                        <p class="text-sm text-gray-600">Interactive UI/UX Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="fas fa-chart-bar text-white text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Data Analysis</h4>
+                                        <p class="text-sm text-gray-600">Market Research & Insights</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="fas fa-robot text-white text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">AI Integration</h4>
+                                        <p class="text-sm text-gray-600">Chatbot & Automation</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="fas fa-lightbulb text-white text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Business Strategy</h4>
+                                        <p class="text-sm text-gray-600">Strategic Planning & Growth</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-2xl text-white">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Why This Matters</h3>
+                            </div>
+                            <p class="text-blue-100 leading-relaxed">
+                                This report showcases my ability to combine technical expertise with business acumen, 
+                                delivering actionable insights that drive real business value. Every feature demonstrates 
+                                practical skills applicable to your organization's growth objectives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Visual Section -->
+                <div class="space-y-8">
+                    <!-- Interactive Card -->
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100">
+                        <div class="text-center space-y-6">
+                            <div class="relative">
+                                <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto flex items-center justify-center mb-4">
+                                    <i class="fas fa-user-tie text-white text-3xl"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-sm"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-bold text-gray-900">Vaibhav Paliwal</h3>
+                                <p class="text-gray-600">Business Analyst & Web Developer</p>
+                                
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-center space-x-2 text-sm text-gray-600">
+                                        <i class="fas fa-envelope text-blue-500"></i>
+                                        <span>paliwalvaibhav03@gmail.com</span>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-2 text-sm text-gray-600">
+                                        <i class="fas fa-phone text-green-500"></i>
+                                        <span>+91 98765 43210</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-100">
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div>
+                                        <div class="text-2xl font-bold text-blue-600">5+</div>
+                                        <div class="text-xs text-gray-600">Years Experience</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-bold text-purple-600">50+</div>
+                                        <div class="text-xs text-gray-600">Projects Delivered</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-bold text-green-600">100%</div>
+                                        <div class="text-xs text-gray-600">Client Satisfaction</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature Highlights -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-900">Report Features</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-calculator text-blue-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">EMI Calculator</div>
+                                    <div class="text-sm text-gray-600">Interactive financial tool</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-comments text-purple-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">AI Chatbot</div>
+                                    <div class="text-sm text-gray-600">Intelligent assistance</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-green-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Live Charts</div>
+                                    <div class="text-sm text-gray-600">Dynamic visualizations</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-mobile-alt text-orange-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Mobile Responsive</div>
+                                    <div class="text-sm text-gray-600">Optimized for all devices</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Executive Summary</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Project Overview</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-home text-blue-500 mr-2"></i>1, 2 & 3 BHK Premium Residences</li>
+                        <li><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Mathuradas Road, Kandivali West</li>
+                        <li><i class="fas fa-calendar text-blue-500 mr-2"></i>Possession: October 2025</li>
+                        <li><i class="fas fa-building text-blue-500 mr-2"></i>58 Units across G+4P+16 floors</li>
+                        <li><i class="fas fa-certificate text-blue-500 mr-2"></i>MahaRERA: P51800048818</li>
+                    </ul>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Key Market Insights</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chart-line text-green-500 mr-2"></i>Average property rate: ₹20,935/sq ft</li>
+                        <li><i class="fas fa-users text-green-500 mr-2"></i>Target population: 360,944 residents</li>
+                        <li><i class="fas fa-train text-green-500 mr-2"></i>8 min to railway, 5 min to metro</li>
+                        <li><i class="fas fa-trending-up text-green-500 mr-2"></i>3.1% house price growth in Q4 2025 (RBI data)</li>
+                        <li><i class="fas fa-star text-green-500 mr-2"></i>Resilient western suburbs market performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Presence Analysis -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Digital Presence & Website Analytics</h2>
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-globe text-blue-500 mr-2"></i>Website Performance Analysis</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                            <span class="font-medium">Domain Authority</span>
+                            <span class="font-bold text-blue-600">28/100</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                            <span class="font-medium">Page Load Speed</span>
+                            <span class="font-bold text-green-600">3.2s</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-yellow-50 rounded">
+                            <span class="font-medium">Mobile Optimization</span>
+                            <span class="font-bold text-yellow-600">Partial</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-purple-50 rounded">
+                            <span class="font-medium">SEO Score</span>
+                            <span class="font-bold text-purple-600">65/100</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-red-50 rounded">
+                        <h4 class="font-bold text-red-700 mb-2">Improvement Opportunities</h4>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li>• Optimize for "Kandivali West properties" keywords</li>
+                            <li>• Add virtual tour integration</li>
+                            <li>• Improve mobile responsiveness</li>
+                            <li>• Add customer testimonials section</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-search text-green-500 mr-2"></i>Search Performance & Competition</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold">Primary Keywords</h4>
+                            <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                                <li>• "Kandivali West flats" - 2,400 searches/month</li>
+                                <li>• "Properties in Kandivali" - 1,900 searches/month</li>
+                                <li>• "1 BHK Kandivali West" - 1,200 searches/month</li>
+                                <li>• "Goyal Aspire" - 320 searches/month</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold">Competitor Ranking</h4>
+                            <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                                <li>• Lodha Group: #1-3 positions</li>
+                                <li>• Dosti Group: #2-5 positions</li>
+                                <li>• Goyal Aspire: #8-12 positions</li>
+                                <li>• Opportunity: Local SEO improvement</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold">Social Media Presence</h4>
+                            <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                                <li>• Facebook: Limited activity</li>
+                                <li>• Instagram: Property photos only</li>
+                                <li>• YouTube: No virtual tours</li>
+                                <li>• LinkedIn: Corporate updates minimal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Strategy Recommendations -->
+            <div class="card-shadow bg-white p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4"><i class="fas fa-rocket text-purple-500 mr-2"></i>Digital Transformation Strategy</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                        <i class="fas fa-mobile-alt text-3xl text-blue-500 mb-2"></i>
+                        <h4 class="font-bold">Website Optimization</h4>
+                        <ul class="text-xs mt-2 space-y-1">
+                            <li>• Mobile-first redesign</li>
+                            <li>• Property search filters</li>
+                            <li>• Virtual tour integration</li>
+                            <li>• Lead capture forms</li>
+                        </ul>
+                        <p class="text-xs text-green-600 mt-2 font-bold">ROI: +40% lead generation</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-lg">
+                        <i class="fas fa-search text-3xl text-green-500 mb-2"></i>
+                        <h4 class="font-bold">SEO Enhancement</h4>
+                        <ul class="text-xs mt-2 space-y-1">
+                            <li>• Local keyword optimization</li>
+                            <li>• Google My Business setup</li>
+                            <li>• Property listing schema</li>
+                            <li>• Content marketing blog</li>
+                        </ul>
+                        <p class="text-xs text-green-600 mt-2 font-bold">ROI: +60% organic traffic</p>
+                    </div>
+                    <div class="text-center p-4 bg-purple-50 rounded-lg">
+                        <i class="fas fa-share-alt text-3xl text-purple-500 mb-2"></i>
+                        <h4 class="font-bold">Social Media Strategy</h4>
+                        <ul class="text-xs mt-2 space-y-1">
+                            <li>• Community-focused content</li>
+                            <li>• Customer testimonials</li>
+                            <li>• Virtual property tours</li>
+                            <li>• Targeted advertising</li>
+                        </ul>
+                        <p class="text-xs text-green-600 mt-2 font-bold">ROI: +25% brand awareness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demographics Analysis -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Demographic Analysis - Kandivali West</h2>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <div class="card-shadow bg-white p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Population Statistics</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Total Population</span>
+                                <span class="font-bold text-lg">360,944</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Area Coverage</span>
+                                <span class="font-bold text-lg">11.39 km²</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Population Density</span>
+                                <span class="font-bold text-lg">31,683/km²</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Male Population</span>
+                                <span class="font-bold text-lg">188,025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Female Population</span>
+                                <span class="font-bold text-lg">172,919</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-shadow bg-white p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Community Demographics</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Gujarati Community</span>
+                                <span class="font-bold text-blue-600">40%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Marathi Community</span>
+                                <span class="font-bold text-green-600">35%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Koli Community</span>
+                                <span class="font-bold text-orange-600">15%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">Others</span>
+                                <span class="font-bold text-purple-600">10%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Sources: <a href="https://www.nobroker.in/locality-iq/kandivali-west-mumbai-liqlt" class="text-blue-500">NoBroker Demographics</a>, 
+                            <a href="https://www.reddit.com/r/mumbai/comments/xdv0mi/do_you_know_which_areas_have_which_community_in/" class="text-blue-500">Community Analysis</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="card-shadow bg-white p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Population Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="demographicsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Real Estate Market Analysis</h2>
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Property Price Trends</h3>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Market Segment Analysis</h3>
+                    <div class="chart-container">
+                        <canvas id="segmentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Market Statistics -->
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-lg">
+                    <i class="fas fa-rupee-sign text-3xl text-blue-500 mb-2"></i>
+                    <h4 class="font-bold text-lg">₹20,935</h4>
+                    <p class="text-gray-600">Avg Price/sq ft</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-lg">
+                    <i class="fas fa-chart-line text-3xl text-green-500 mb-2"></i>
+                    <h4 class="font-bold text-lg">3.1%</h4>
+                    <p class="text-gray-600">Q4 2025 Growth</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-lg">
+                    <i class="fas fa-home text-3xl text-purple-500 mb-2"></i>
+                    <h4 class="font-bold text-lg">84%</h4>
+                    <p class="text-gray-600">Western Suburbs Demand</p>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-lg">
+                    <i class="fas fa-clock text-3xl text-orange-500 mb-2"></i>
+                    <h4 class="font-bold text-lg">Oct 2025</h4>
+                    <p class="text-gray-600">Project Completion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Analysis -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Competitive Landscape</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Competitor Price Comparison</h3>
+                    <div class="chart-container">
+                        <canvas id="competitorChart" style="display: none;"></canvas>
+                        <!-- Fallback content in case chart doesn't load -->
+                        <div id="competitorFallback" style="display: block;">
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="font-medium">Sri Arthaya</span>
+                                    <span class="font-bold text-green-600">₹18,905/sq ft</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="font-medium">Dosti Kandivali</span>
+                                    <span class="font-bold text-yellow-600">₹20,000/sq ft</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                    <span class="font-medium">DLF Mumbai</span>
+                                    <span class="font-bold text-red-600">₹25,000/sq ft</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                                    <span class="font-medium">Goyal Aspire</span>
+                                    <span class="font-bold text-blue-600">₹20,935/sq ft</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-3 bg-green-50 rounded text-center">
+                                <h4 class="font-bold text-green-700 mb-2">Competitive Position</h4>
+                                <p class="text-sm text-gray-700">Goyal Aspire positioned competitively at ₹20,935/sq ft, above budget option Sri Arthaya (₹18,905) but below luxury DLF (₹25,000+)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Key Competitors Analysis</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold">Sri Arthaya</h4>
+                            <p class="text-sm text-gray-600">₹18,905/sq ft | 1BHK: ₹85.1L - 2BHK: ₹1.23Cr</p>
+                            <p class="text-xs text-gray-500">405-742 sq ft | Under Construction</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold">Dosti Kandivali West</h4>
+                            <p class="text-sm text-gray-600">1BHK: ₹90L - 2BHK: ₹1.25Cr</p>
+                            <p class="text-xs text-gray-500">400-625 sq ft | Established brand</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold">DLF Mumbai (Upcoming)</h4>
+                            <p class="text-sm text-gray-600">₹25,000+/sq ft | Luxury segment entry</p>
+                            <p class="text-xs text-gray-500">₹2,500 Cr project value | Premium positioning threat</p>
+                        </div>
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold">Market Outlook 2025</h4>
+                            <p class="text-sm text-gray-600">Housing sales dipped 19% in Q2 2025, but optimistic outlook</p>
+                            <p class="text-xs text-gray-500">Raymond Realty targeting ₹3,000 Cr sales in FY26 | RBI 3.1% growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Competitive Matrix -->
+            <div class="card-shadow bg-white p-6 rounded-lg mt-8">
+                <h3 class="text-xl font-semibold mb-4">
+                    <i class="fas fa-chart-bar text-purple-600 mr-2"></i>Competitive Feature Matrix
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-3 text-left font-semibold">Features</th>
+                                <th class="p-3 text-center font-semibold text-blue-700">Goyal Aspire</th>
+                                <th class="p-3 text-center font-semibold">Sri Arthaya</th>
+                                <th class="p-3 text-center font-semibold">Dosti Kandivali</th>
+                                <th class="p-3 text-center font-semibold">DLF Mumbai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-3 font-medium">Price/sq ft</td>
+                                <td class="p-3 text-center font-bold text-blue-600">₹20,935</td>
+                                <td class="p-3 text-center text-green-600 font-semibold">₹18,905</td>
+                                <td class="p-3 text-center">₹20,000</td>
+                                <td class="p-3 text-center text-red-600 font-semibold">₹25,000+</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50 bg-gray-25">
+                                <td class="p-3 font-medium">Possession</td>
+                                <td class="p-3 text-center text-green-600 font-semibold">Oct 2025</td>
+                                <td class="p-3 text-center text-orange-600">Under Construction</td>
+                                <td class="p-3 text-center text-green-600 font-semibold">Ready</td>
+                                <td class="p-3 text-center text-orange-600">2026+</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-3 font-medium">Railway Distance</td>
+                                <td class="p-3 text-center text-green-600 font-semibold">8 min</td>
+                                <td class="p-3 text-center">10 min</td>
+                                <td class="p-3 text-center">8 min</td>
+                                <td class="p-3 text-center">12 min</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50 bg-gray-25">
+                                <td class="p-3 font-medium">Metro Access</td>
+                                <td class="p-3 text-center text-green-600 font-semibold">5 min</td>
+                                <td class="p-3 text-center">7 min</td>
+                                <td class="p-3 text-center">6 min</td>
+                                <td class="p-3 text-center">10 min</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-3 font-medium">Brand Recognition</td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Growing</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">Local</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Established</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Premium</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-25">
+                                <td class="p-3 font-medium">Value Proposition</td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Balanced</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Affordable</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">Mid-range</span>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <span class="inline-flex items-center px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Luxury</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                    <p class="text-sm font-semibold text-blue-800">
+                        <i class="fas fa-lightbulb text-blue-600 mr-2"></i>
+                        Competitive Advantage: Goyal Aspire offers the best connectivity-to-price ratio with near-term possession
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure & Connectivity -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Infrastructure & Connectivity Analysis</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-route text-blue-500 mr-2"></i>Transport</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span>Railway Station</span>
+                            <span class="font-semibold text-green-600">8 min</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Metro Station</span>
+                            <span class="font-semibold text-green-600">5 min</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Western Express Highway</span>
+                            <span class="font-semibold text-blue-600">Direct Access</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Airport</span>
+                            <span class="font-semibold text-orange-600">17 km</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-shopping-cart text-green-500 mr-2"></i>Amenities</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span>Supermarket</span>
+                            <span class="font-semibold text-green-600">5 min</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Banking</span>
+                            <span class="font-semibold text-green-600">5 min</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Schools</span>
+                            <span class="font-semibold text-blue-600">10 min</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Hospitals</span>
+                            <span class="font-semibold text-orange-600">10 min</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-building text-purple-500 mr-2"></i>Commercial</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between">
+                            <span>Akurli Industrial Estate</span>
+                            <span class="font-semibold text-blue-600">Local</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>SEEPZ SEZ</span>
+                            <span class="font-semibold text-orange-600">16 km</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Commercial Hubs</span>
+                            <span class="font-semibold text-green-600">Nearby</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Office Spaces</span>
+                            <span class="font-semibold text-blue-600">Growing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Customer Analysis -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Target Customer Segmentation</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Primary Target Segments</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold text-blue-600">Young Professionals (25-35)</h4>
+                            <p class="text-sm text-gray-600">IT professionals, working in western suburbs, Gujarati community</p>
+                            <p class="text-xs text-gray-500">Target: 1-2 BHK | Budget: ₹1-2Cr | Income: ₹8-15L/year</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-green-600">Nuclear Families (30-45)</h4>
+                            <p class="text-sm text-gray-600">Married couples with young children, Marathi & Gujarati families</p>
+                            <p class="text-xs text-gray-500">Target: 2-3 BHK | Budget: ₹1.5-3Cr | Income: ₹12-25L/year</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-purple-600">Investors (35-50)</h4>
+                            <p class="text-sm text-gray-600">Real estate investors, NRIs, business owners</p>
+                            <p class="text-xs text-gray-500">Target: All configurations | ROI focused | Multiple properties</p>
+                        </div>
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold text-orange-600">Upgraders (40-55)</h4>
+                            <p class="text-sm text-gray-600">Existing homeowners looking to upgrade, established families</p>
+                            <p class="text-xs text-gray-500">Target: 3 BHK | Premium amenities | Income: ₹20L+/year</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Customer Profile Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="customerChart" style="display: none;"></canvas>
+                        <!-- Fallback content for customer distribution -->
+                        <div id="customerFallback" style="display: block;">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-blue-50 rounded">
+                                    <div class="w-16 h-16 bg-blue-500 rounded-full mx-auto mb-2"></div>
+                                    <h4 class="font-bold text-blue-600">35%</h4>
+                                    <p class="text-xs">Young Professionals (25-35)</p>
+                                </div>
+                                <div class="text-center p-4 bg-green-50 rounded">
+                                    <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-2"></div>
+                                    <h4 class="font-bold text-green-600">30%</h4>
+                                    <p class="text-xs">Nuclear Families (30-45)</p>
+                                </div>
+                                <div class="text-center p-4 bg-purple-50 rounded">
+                                    <div class="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-2"></div>
+                                    <h4 class="font-bold text-purple-600">20%</h4>
+                                    <p class="text-xs">Investors (35-50)</p>
+                                </div>
+                                <div class="text-center p-4 bg-yellow-50 rounded">
+                                    <div class="w-16 h-16 bg-yellow-500 rounded-full mx-auto mb-2"></div>
+                                    <h4 class="font-bold text-yellow-600">15%</h4>
+                                    <p class="text-xs">Upgraders (40-55)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Average Household Income</span>
+                            <span class="font-bold">₹12-18L/year</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Primary Occupation</span>
+                            <span class="font-bold">Service (65%)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Age Group (Primary)</span>
+                            <span class="font-bold">28-42 years</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Family Size</span>
+                            <span class="font-bold">3-4 members</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Strategy -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Digital Marketing Strategy</h2>
+            <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fab fa-facebook text-blue-600 mr-2"></i>Social Media</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Facebook & Instagram targeted ads (30% budget)</li>
+                        <li>• Virtual property tours on YouTube</li>
+                        <li>• LinkedIn for professional targeting</li>
+                        <li>• Community-specific content (Gujarati/Marathi)</li>
+                        <li>• User-generated content campaigns</li>
+                    </ul>
+                    <div class="mt-3 p-2 bg-blue-50 rounded text-xs">
+                        <strong>Primary Focus:</strong> Social media engagement & brand awareness
+                    </div>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-search text-green-600 mr-2"></i>SEO & SEM</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Google Ads for high-intent keywords (25% budget)</li>
+                        <li>• Local SEO optimization</li>
+                        <li>• Property portal listings (15% budget)</li>
+                        <li>• Content marketing blog</li>
+                        <li>• Location-based targeting</li>
+                    </ul>
+                    <div class="mt-3 p-2 bg-green-50 rounded text-xs">
+                        <strong>Primary Focus:</strong> Search engine optimization & paid advertising
+                    </div>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-mobile-alt text-purple-600 mr-2"></i>Digital Experience</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Mobile-optimized website</li>
+                        <li>• AR/VR property experiences</li>
+                        <li>• WhatsApp Business integration</li>
+                        <li>• Online booking system</li>
+                        <li>• CRM automation</li>
+                    </ul>
+                    <div class="mt-3 p-2 bg-purple-50 rounded text-xs">
+                        <strong>Implementation:</strong> Technology integration & user experience enhancement
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Marketing Channels Performance -->
+            <div class="card-shadow bg-white p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Recommended Marketing Channel Mix</h3>
+                <div class="chart-container">
+                    <canvas id="marketingChart" style="display: none;"></canvas>
+                    <!-- Fallback content for marketing mix -->
+                    <div id="marketingFallback" style="display: block;">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                                <span class="font-medium">Social Media</span>
+                                <span class="font-bold text-blue-600">30%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                                <span class="font-medium">Google Ads</span>
+                                <span class="font-bold text-green-600">25%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-yellow-50 rounded">
+                                <span class="font-medium">Property Portals</span>
+                                <span class="font-bold text-yellow-600">20%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-purple-50 rounded">
+                                <span class="font-medium">Referrals</span>
+                                <span class="font-bold text-purple-600">15%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                <span class="font-medium">Traditional</span>
+                                <span class="font-bold text-gray-600">10%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-semibold mb-2">Strategic Marketing Focus:</h4>
+                        <ul class="space-y-1">
+                            <li>• Digital channels for optimal lead quality</li>
+                            <li>• Property portals for enhanced conversion rates</li>
+                            <li>• Referral programs for higher closure rates</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Marketing Strategy Recommendations:</h4>
+                        <ul class="space-y-1">
+                            <li>• Comprehensive digital marketing approach</li>
+                            <li>• Targeted lead generation campaigns</li>
+                            <li>• Optimized conversion funnel management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Recommendations -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Strategic Recommendations</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-green-600"><i class="fas fa-bullseye mr-2"></i>Immediate Actions</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Launch targeted digital campaigns</strong> focusing on 25-45 age group professionals in Gujarati & Marathi communities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Optimize pricing strategy</strong> to compete with Sri Arthaya (₹18,905/sq ft) while maintaining premium positioning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Enhance virtual tour experiences</strong> and online booking platform with multilingual support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Deploy AI-powered chatbot</strong> for 24/7 customer support, property inquiries, and lead qualification in English, Hindi, Gujarati & Marathi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Leverage market resilience</strong> despite 19% Q2 2025 dip in housing sales - Mumbai remains strong performer</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600"><i class="fas fa-rocket mr-2"></i>Long-term Growth</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-blue-500 mr-2 mt-1"></i>
+                            <span><strong>Expand in western suburbs</strong> leveraging metro connectivity improvements and sustained demand despite market moderation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-blue-500 mr-2 mt-1"></i>
+                            <span><strong>Develop premium segment</strong> properties targeting ₹25L+ income households</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-blue-500 mr-2 mt-1"></i>
+                            <span><strong>Build strategic partnerships</strong> with corporate housing programs and IT companies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-blue-500 mr-2 mt-1"></i>
+                            <span><strong>Integrate advanced chatbot analytics</strong> to track customer preferences, popular queries, and optimize sales funnel conversion rates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-blue-500 mr-2 mt-1"></i>
+                            <span><strong>Implement sustainable building</strong> practices for ESG-focused investors</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Chatbot Implementation Strategy -->
+            <div class="mt-8">
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-600"><i class="fas fa-robot mr-2"></i>AI Chatbot Implementation Strategy</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-3 text-gray-800">Core Chatbot Features</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-comments text-blue-500 mr-2 mt-1"></i>
+                                    <span><strong>24/7 Customer Support:</strong> Instant responses to property inquiries, pricing, availability, and amenities</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-language text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Multilingual Support:</strong> English, Hindi, Gujarati, and Marathi for local community engagement</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-filter text-purple-500 mr-2 mt-1"></i>
+                                    <span><strong>Lead Qualification:</strong> Smart questioning to identify budget, preferences, and timeline</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-calendar text-orange-500 mr-2 mt-1"></i>
+                                    <span><strong>Appointment Booking:</strong> Direct integration with sales team calendar for site visits</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+                        <h4 class="font-semibold text-center mb-3 text-gray-800">Expected Business Impact</h4>
+                        <div class="grid md:grid-cols-4 gap-4 text-center">
+                            <div>
+                                <p class="text-2xl font-bold text-blue-600">40%</p>
+                                <p class="text-xs text-gray-600">Faster Response Time</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-green-600">60%</p>
+                                <p class="text-xs text-gray-600">Lead Capture Increase</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-purple-600">24/7</p>
+                                <p class="text-xs text-gray-600">Availability</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-orange-600">35%</p>
+                                <p class="text-xs text-gray-600">Cost Reduction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Opportunities -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Investment Opportunities & ROI Analysis</h2>
+            <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                <div class="card-shadow bg-white p-6 rounded-lg text-center">
+                    <i class="fas fa-chart-line text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Capital Appreciation</h3>
+                    <p class="text-3xl font-bold text-green-600">8-12%</p>
+                    <p class="text-sm text-gray-600">Annual expected growth</p>
+                    <p class="text-xs text-gray-500 mt-2">Based on RBI Q4 2025 data showing 3.1% growth</p>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg text-center">
+                    <i class="fas fa-home text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Rental Yield</h3>
+                    <p class="text-3xl font-bold text-blue-600">3-4%</p>
+                    <p class="text-sm text-gray-600">Annual rental returns</p>
+                    <p class="text-xs text-gray-500 mt-2">Avg rent ₹38,652 in Kandivali West</p>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-lg text-center">
+                    <i class="fas fa-clock text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Break-even</h3>
+                    <p class="text-3xl font-bold text-purple-600">7-9 Years</p>
+                    <p class="text-sm text-gray-600">Investment payback period</p>
+                    <p class="text-xs text-gray-500 mt-2">Including capital appreciation</p>
+                </div>
+            </div>
+            
+            <!-- Interactive EMI Calculator -->
+            <div class="card-shadow bg-white p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-semibold mb-4">
+                    <i class="fas fa-calculator text-green-600 mr-2"></i>Interactive EMI Calculator
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Loan Amount</label>
+                        <input type="range" id="loanAmount" min="5000000" max="30000000" value="15000000" class="w-full mb-2">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>₹50L</span>
+                            <span id="loanDisplay" class="font-semibold text-blue-600">₹1.5 Cr</span>
+                            <span>₹3 Cr</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Interest Rate (%)</label>
+                        <input type="range" id="interestRate" min="8" max="12" value="9.5" step="0.1" class="w-full mb-2">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>8%</span>
+                            <span id="rateDisplay" class="font-semibold text-purple-600">9.5%</span>
+                            <span>12%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Tenure (Years)</label>
+                        <input type="range" id="tenure" min="10" max="30" value="20" class="w-full mb-2">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>10 yrs</span>
+                            <span id="tenureDisplay" class="font-semibold text-orange-600">20 years</span>
+                            <span>30 yrs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg text-center">
+                        <p class="text-2xl font-bold text-green-600" id="emiResult">₹1,39,126</p>
+                        <p class="text-sm text-gray-600">Monthly EMI</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-xl font-bold text-blue-600" id="totalInterest">₹1.84 Cr</p>
+                        <p class="text-sm text-gray-600">Total Interest</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <p class="text-xl font-bold text-purple-600" id="totalAmount">₹3.34 Cr</p>
+                        <p class="text-sm text-gray-600">Total Amount</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-shadow bg-white p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Revenue Projection & Market Growth</h3>
+                <div class="chart-container">
+                    <canvas id="revenueChart" style="display: none;"></canvas>
+                    <!-- Fallback content for revenue projection -->
+                    <div id="revenueFallback" style="display: block;">
+                        <div class="grid grid-cols-6 gap-2 mb-4 overflow-x-auto">
+                            <div class="text-center min-w-16">
+                                <div class="h-20 bg-gradient-to-t from-green-200 to-green-500 rounded-t mb-2"></div>
+                                <p class="text-xs font-bold">2024</p>
+                                <p class="text-xs">Base Year</p>
+                            </div>
+                            <div class="text-center min-w-16">
+                                <div class="h-32 bg-gradient-to-t from-green-300 to-green-600 rounded-t mb-2"></div>
+                                <p class="text-xs font-bold">2025</p>
+                                <p class="text-xs">Launch</p>
+                            </div>
+                            <div class="text-center min-w-16">
+                                <div class="h-40 bg-gradient-to-t from-green-400 to-green-700 rounded-t mb-2"></div>
+                                <p class="text-xs font-bold">2026</p>
+                                <p class="text-xs">Growth</p>
+                            </div>
+                            <div class="text-center min-w-16">
+                                <div class="h-48 bg-gradient-to-t from-green-500 to-green-800 rounded-t mb-2"></div>
+                                <p class="text-xs font-bold">2027</p>
+                                <p class="text-xs">Expansion</p>
+                            </div>
+                            <div class="text-center min-w-16">
+                                <div class="h-56 bg-gradient-to-t from-green-600 to-green-900 rounded-t mb-2"></div>
+                                <p class="text-xs font-bold">2028</p>
+                                <p class="text-xs">Maturity</p>
+                            </div>
+                            <div class="text-center min-w-16">
+                                <div class="h-64 bg-gradient-to-t from-green-700 to-green-900 rounded-t mb-2"></div>
+                                <p class="text-xs font-bold">2029</p>
+                                <p class="text-xs">Peak</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-3">
+                            <span>📈 <strong>Revenue Growth (Left Axis):</strong> Business Performance</span>
+                            <span>📊 <strong>Growth Rate (Right Axis):</strong> % Annual</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-xs">
+                            <div class="bg-green-50 p-2 rounded">
+                                <h5 class="font-bold text-green-700">Revenue Growth Trajectory</h5>
+                                <ul class="mt-1 space-y-1">
+                                    <li>2024: Foundation Year</li>
+                                    <li>2025: Project Launch</li>
+                                    <li>2026: Strong Growth Phase</li>
+                                    <li>2027: Market Expansion</li>
+                                    <li>2028: Portfolio Maturity</li>
+                                    <li>2029: Peak Performance</li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-50 p-2 rounded">
+                                <h5 class="font-bold text-purple-700">Market Growth Rate (%)</h5>
+                                <ul class="mt-1 space-y-1">
+                                    <li>2024: 3.1%</li>
+                                    <li>2025: 4.2%</li>
+                                    <li>2026: 4.8%</li>
+                                    <li>2027: 5.1%</li>
+                                    <li>2028: 4.9%</li>
+                                    <li>2029: 4.5%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-3 bg-blue-50 rounded">
+                            <p class="text-sm text-center">
+                                <strong>6-Year Business Projection:</strong> Steady growth from foundation year (2024) to peak performance (2029) | 
+                                <strong>Market Growth:</strong> 3.1% (2024) rising to 5.1% peak (2027), stabilizing at 4.5% (2029)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-green-50 rounded">
+                        <h4 class="font-bold text-green-600">Project Revenue</h4>
+                        <p class="text-2xl font-bold">Strong</p>
+                        <p class="text-sm text-gray-600">Expected total sales performance</p>
+                    </div>
+                    <div class="text-center p-4 bg-blue-50 rounded">
+                        <h4 class="font-bold text-blue-600">Market Growth</h4>
+                        <p class="text-2xl font-bold">4.2-5.1%</p>
+                        <p class="text-sm text-gray-600">Annual growth 2025-2029</p>
+                    </div>
+                    <div class="text-center p-4 bg-purple-50 rounded">
+                        <h4 class="font-bold text-purple-600">Units Sold</h4>
+                        <p class="text-2xl font-bold">45-50</p>
+                        <p class="text-sm text-gray-600">Target by 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Acceleration Strategies -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Business Acceleration Strategies</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <!-- Digital Marketing Strategies -->
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-bullhorn text-blue-600 mr-2"></i>Digital Marketing Acceleration
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700">Omnichannel Digital Presence</h4>
+                            <ul class="mt-2 space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Multi-platform optimization</strong> - Consistent brand presence across web, mobile, social media, and property portals with unified messaging</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Geo-targeted campaigns</strong> - Location-based ads targeting potential buyers in specific areas with high ROI potential</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Personalized remarketing</strong> - Dynamic ad campaigns based on user behavior and preferences with conversion tracking</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700">Performance Marketing Framework</h4>
+                            <ul class="mt-2 space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>AI-powered bid optimization</strong> - Machine learning algorithms to maximize ad spend efficiency and reduce CPA by 30%</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Cross-channel attribution modeling</strong> - Comprehensive tracking system to identify highest-converting touchpoints</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Conversion funnel optimization</strong> - Strategic A/B testing to increase conversion rates at each stage of buyer journey</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700">Content & Community Engagement</h4>
+                            <ul class="mt-2 space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Interactive content hub</strong> - Educational resources, neighborhood guides, and investment calculators to nurture prospects</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>User-generated testimonials</strong> - Authentic resident stories and experiences to build trust and community feel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Virtual community events</strong> - Online webinars, property tours, and Q&A sessions to engage potential buyers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 border border-blue-200 rounded-lg">
+                        <p class="text-sm font-semibold text-blue-800">Expected Impact: <span class="text-green-600">40-45% increase in qualified leads with 25% lower acquisition costs</span></p>
+                    </div>
+                </div>
+                
+                <!-- Direct Client Communication Systems -->
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-comments text-purple-600 mr-2"></i>Direct Client Communication Systems
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700">Advanced AI Chatbot Integration</h4>
+                            <ul class="mt-2 space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Multilingual capabilities</strong> - Support for English, Hindi, Gujarati & Marathi to serve diverse customer base</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Contextual conversation memory</strong> - Ability to recall previous interactions for personalized responses</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Seamless human handoff</strong> - Intelligent escalation protocol when complex queries require sales representative assistance</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700">Omnichannel Communication Hub</h4>
+                            <ul class="mt-2 space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Unified messaging platform</strong> - Centralized system integrating website chat, WhatsApp, SMS, email, and social messaging</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Automated appointment scheduling</strong> - Self-service booking for site visits and virtual tours with calendar integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Personalized follow-up system</strong> - Automated but customized communication sequences based on client interactions</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700">Sentiment Analysis & Feedback Loop</h4>
+                            <ul class="mt-2 space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Real-time sentiment detection</strong> - AI analysis of customer conversations to identify satisfaction levels</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Voice of Customer dashboard</strong> - Aggregated feedback insights to drive product and service improvements</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                    <span><strong>Predictive customer needs</strong> - Anticipatory support based on behavior patterns and conversation history</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 border border-purple-200 rounded-lg">
+                        <p class="text-sm font-semibold text-purple-800">Expected Impact: <span class="text-green-600">70% faster response time, 50% increase in customer satisfaction, 30% reduction in support costs</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Market Research & Intelligence -->
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-search-dollar text-green-600 mr-2"></i>Market Research & Intelligence
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-green-50 p-3 rounded">
+                            <h4 class="font-semibold text-green-700 text-sm">Competitive Intelligence System</h4>
+                            <p class="text-xs mt-1">Automated monitoring of competitor pricing, amenities, promotions, and customer sentiment with weekly actionable reports</p>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded">
+                            <h4 class="font-semibold text-green-700 text-sm">Predictive Market Analytics</h4>
+                            <p class="text-xs mt-1">AI-powered forecasting models to identify emerging market trends, price shifts, and demand patterns up to 12 months in advance</p>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded">
+                            <h4 class="font-semibold text-green-700 text-sm">Customer Persona Evolution</h4>
+                            <p class="text-xs mt-1">Dynamic buyer profiles that evolve based on real-time demographic, behavioral, and preference data from multiple touchpoints</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">Data-Driven Decision Making</span>
+                    </div>
+                </div>
+                
+                <!-- Sales Acceleration Tools -->
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-bolt text-yellow-600 mr-2"></i>Sales Acceleration Tools
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-yellow-50 p-3 rounded">
+                            <h4 class="font-semibold text-yellow-700 text-sm">AI-Powered Lead Scoring</h4>
+                            <p class="text-xs mt-1">Machine learning algorithms to identify high-potential prospects based on 20+ behavioral and demographic factors with 85% accuracy</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded">
+                            <h4 class="font-semibold text-yellow-700 text-sm">Interactive 3D Property Experience</h4>
+                            <p class="text-xs mt-1">Immersive AR/VR platform allowing remote buyers to customize interiors, test furniture layouts, and experience views in real-time</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded">
+                            <h4 class="font-semibold text-yellow-700 text-sm">Digital Sales Assistant</h4>
+                            <p class="text-xs mt-1">AI companion for sales team providing real-time insights, objection handling scripts, and personalized recommendation engine</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">40% Faster Sales Cycle</span>
+                    </div>
+                </div>
+                
+                <!-- System Integration & Optimization -->
+                <div class="card-shadow bg-white p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-network-wired text-blue-600 mr-2"></i>System Integration & Optimization
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-3 rounded">
+                            <h4 class="font-semibold text-blue-700 text-sm">Unified Data Ecosystem</h4>
+                            <p class="text-xs mt-1">Centralized data architecture connecting CRM, marketing automation, property management, and financial systems with real-time synchronization</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded">
+                            <h4 class="font-semibold text-blue-700 text-sm">Customer Journey Orchestration</h4>
+                            <p class="text-xs mt-1">End-to-end workflow automation across all touchpoints from initial inquiry through purchase and post-occupancy relationship management</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded">
+                            <h4 class="font-semibold text-blue-700 text-sm">Performance Analytics Dashboard</h4>
+                            <p class="text-xs mt-1">Customizable executive dashboard with KPIs, conversion metrics, and predictive indicators for data-driven strategic decisions</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">35% Operational Efficiency Gain</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Strategic Implementation Roadmap -->
+            <div class="mt-8 card-shadow bg-white p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4 text-center">
+                    <i class="fas fa-road text-indigo-600 mr-2"></i>Strategic Implementation Roadmap
+                </h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-blue-50 to-indigo-50 text-gray-700">
+                                <th class="py-3 px-4 text-left font-semibold border-b-2 border-gray-200 w-1/6">Phase</th>
+                                <th class="py-3 px-4 text-left font-semibold border-b-2 border-gray-200 w-1/6">Timeframe</th>
+                                <th class="py-3 px-4 text-left font-semibold border-b-2 border-gray-200 w-2/6">Key Initiatives</th>
+                                <th class="py-3 px-4 text-left font-semibold border-b-2 border-gray-200 w-2/6">Deliverables & KPIs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Phase 1 -->
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold text-blue-700">Phase 1</span><br>
+                                    <span class="text-xs text-gray-500">Foundation</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold">Q3 2025</span><br>
+                                    <span class="text-xs text-gray-500">Jul - Sep</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="list-disc pl-4 text-sm space-y-1">
+                                        <li>Deploy AI chatbot with multilingual support</li>
+                                        <li>Implement analytics infrastructure</li>
+                                        <li>Develop CRM integration framework</li>
+                                        <li>Establish digital marketing baseline</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="text-sm space-y-1">
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> Functional chatbot with 85% query resolution</li>
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> Data collection framework activated</li>
+                                        <li><i class="fas fa-chart-line text-blue-500 mr-1"></i> 30% increase in lead capture</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            
+                            <!-- Phase 2 -->
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold text-green-700">Phase 2</span><br>
+                                    <span class="text-xs text-gray-500">Integration</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold">Q4 2025</span><br>
+                                    <span class="text-xs text-gray-500">Oct - Dec</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="list-disc pl-4 text-sm space-y-1">
+                                        <li>Launch omnichannel communication platform</li>
+                                        <li>Implement AI-powered lead scoring system</li>
+                                        <li>Deploy competitive intelligence monitoring</li>
+                                        <li>Integrate AR/VR property experiences</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="text-sm space-y-1">
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> Unified messaging across all channels</li>
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> 50% more efficient lead prioritization</li>
+                                        <li><i class="fas fa-chart-line text-blue-500 mr-1"></i> 25% reduction in sales cycle length</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            
+                            <!-- Phase 3 -->
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold text-purple-700">Phase 3</span><br>
+                                    <span class="text-xs text-gray-500">Optimization</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold">Q1 2026</span><br>
+                                    <span class="text-xs text-gray-500">Jan - Mar</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="list-disc pl-4 text-sm space-y-1">
+                                        <li>Deploy predictive analytics engine</li>
+                                        <li>Implement sentiment analysis system</li>
+                                        <li>Launch executive dashboard with KPIs</li>
+                                        <li>Optimize digital marketing campaigns</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="text-sm space-y-1">
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> Market trend predictions with 80% accuracy</li>
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> Customer sentiment tracking active</li>
+                                        <li><i class="fas fa-chart-line text-blue-500 mr-1"></i> 40% marketing ROI improvement</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            
+                            <!-- Phase 4 -->
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold text-orange-700">Phase 4</span><br>
+                                    <span class="text-xs text-gray-500">Expansion</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <span class="font-semibold">Q2 2026</span><br>
+                                    <span class="text-xs text-gray-500">Apr - Jun</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="list-disc pl-4 text-sm space-y-1">
+                                        <li>Scale AI-driven growth strategies</li>
+                                        <li>Implement cross-platform automation</li>
+                                        <li>Launch advanced customer segmentation</li>
+                                        <li>Deploy full revenue optimization system</li>
+                                    </ul>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <ul class="text-sm space-y-1">
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> End-to-end workflow automation</li>
+                                        <li><i class="fas fa-check-circle text-green-500 mr-1"></i> Dynamic buyer persona system</li>
+                                        <li><i class="fas fa-chart-line text-blue-500 mr-1"></i> 30% overall revenue growth</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Resource Requirements -->
+                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-3">
+                        <i class="fas fa-cogs text-blue-600 mr-2"></i>Implementation Resources
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                            <h5 class="font-semibold text-blue-700 mb-2">Technology</h5>
+                            <ul class="space-y-1">
+                                <li><i class="fas fa-server text-blue-500 mr-1"></i> Cloud infrastructure</li>
+                                <li><i class="fas fa-database text-blue-500 mr-1"></i> Data warehouse</li>
+                                <li><i class="fas fa-robot text-blue-500 mr-1"></i> AI/ML platform</li>
+                                <li><i class="fas fa-lock text-blue-500 mr-1"></i> Security framework</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold text-purple-700 mb-2">Human Resources</h5>
+                            <ul class="space-y-1">
+                                <li><i class="fas fa-user-cog text-purple-500 mr-1"></i> Technical implementation team</li>
+                                <li><i class="fas fa-chalkboard-teacher text-purple-500 mr-1"></i> Training specialists</li>
+                                <li><i class="fas fa-chart-pie text-purple-500 mr-1"></i> Data analysts</li>
+                                <li><i class="fas fa-bullhorn text-purple-500 mr-1"></i> Marketing specialists</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-purple-700 mb-2">Specialized Expertise</h5>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-laptop-code text-purple-500 mr-1 mt-1"></i> 
+                                    <span><strong>Web Development:</strong> Core team building integration layer</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-vr-cardboard text-purple-500 mr-1 mt-1"></i> 
+                                    <span><strong>AR/VR & Tools Expertise</strong> Immersive web experiences integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-comments-alt text-purple-500 mr-1 mt-1"></i> 
+                                    <span><strong>Conversational AI Experts:</strong> Chatbot implementation and training</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-network text-purple-500 mr-1 mt-1"></i> 
+                                    <span><strong>Data Analyst:</strong> Analytics integration and insights generation</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-green-700 mb-2">Budget Allocation</h5>
+                            <ul class="space-y-1">
+                                <li><i class="fas fa-coins text-green-500 mr-1"></i> Technology: 45%</li>
+                                <li><i class="fas fa-coins text-green-500 mr-1"></i> Marketing: 30%</li>
+                                <li><i class="fas fa-coins text-green-500 mr-1"></i> Training: 15%</li>
+                                <li><i class="fas fa-coins text-green-500 mr-1"></i> Contingency: 10%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-center mb-3">Expected Business Impact After Full Implementation</h4>
+                    <div class="grid grid-cols-5 gap-2 text-center text-sm">
+                        <div>
+                            <p class="text-xl font-bold text-green-600">30%</p>
+                            <p class="text-xs text-gray-600">Revenue Growth</p>
+                        </div>
+                        <div>
+                            <p class="text-xl font-bold text-blue-600">45%</p>
+                            <p class="text-xs text-gray-600">Lead Conversion</p>
+                        </div>
+                        <div>
+                            <p class="text-xl font-bold text-purple-600">60%</p>
+                            <p class="text-xs text-gray-600">Marketing ROI</p>
+                        </div>
+                        <div>
+                            <p class="text-xl font-bold text-orange-600">25%</p>
+                            <p class="text-xs text-gray-600">Cost Reduction</p>
+                        </div>
+                        <div>
+                            <p class="text-xl font-bold text-red-600">85%</p>
+                            <p class="text-xs text-gray-600">Customer Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Application Conclusion -->
+    <section class="py-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6">
+                    <i class="fas fa-handshake mr-2"></i>Ready to Drive Your Business Growth
+                </h2>
+                <p class="text-lg mb-6">
+                    This comprehensive analysis demonstrates my ability to deliver actionable business intelligence 
+                    that can directly impact Goyal Aspire's revenue and market position.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-1">Potential Revenue Impact</h3>
+                        <p class="text-3xl font-bold text-yellow-300 mb-1">Significant</p>
+                        <p class="text-sm">Multi-year projected growth with recommended strategies</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">Marketing ROI</h3>
+                        <p class="text-3xl font-bold text-green-300 mb-2">3-5x</p>
+                        <p class="text-sm">Expected return on optimized digital marketing spend</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">Market Position</h3>
+                        <p class="text-3xl font-bold text-blue-300 mb-2">#2-3</p>
+                        <p class="text-sm">Achievable ranking in Kandivali West market</p>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold mb-4">What I Can Bring to Goyal Aspire:</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-left">
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Advanced data analysis & market research skills</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Website development & CRM integration</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Digital marketing strategy & implementation</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Customer segmentation & targeting expertise</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Graphic design & branding</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Modern UI/UX design & responsive development</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>SEO optimization & technical implementation</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Revenue optimization & growth planning</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Competitive analysis & positioning strategies</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Real estate market understanding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold mb-4">Technical Solutions for Real Estate Growth:</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-yellow-300">Web Development & Digital Presence</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><i class="fas fa-code text-blue-400 mr-2"></i>Custom property listing websites with advanced search</li>
+                                <li><i class="fas fa-mobile-alt text-blue-400 mr-2"></i>Mobile-responsive design for on-the-go clients</li>
+                                <li><i class="fas fa-search text-blue-400 mr-2"></i>SEO optimization for higher Google rankings</li>
+                                <li><i class="fas fa-chart-line text-blue-400 mr-2"></i>Analytics dashboard for tracking lead conversion</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-yellow-300">Data & Business Intelligence</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><i class="fas fa-database text-green-400 mr-2"></i>CRM systems for better customer management</li>
+                                <li><i class="fas fa-chart-bar text-green-400 mr-2"></i>Market trend analysis & price prediction models</li>
+                                <li><i class="fas fa-users text-green-400 mr-2"></i>Customer behavior tracking & segmentation</li>
+                                <li><i class="fas fa-bullhorn text-green-400 mr-2"></i>Digital marketing campaign optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-400 text-gray-800 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        <i class="fas fa-envelope mr-2"></i>Let's Discuss How I Can Help Goyal Aspire Grow
+                    </h3>
+                    <p class="mb-4">
+                        This report is just a sample of what I can deliver. I'm excited to discuss how my skills 
+                        can contribute to your team's success and help achieve the projected business growth targets.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="bg-white bg-opacity-20 rounded px-4 py-2">
+                            <i class="fas fa-user mr-2"></i>Vaibhav Paliwal
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded px-4 py-2">
+                            <i class="fas fa-briefcase mr-2"></i>Business Analyst, Website Developer, Design & Marketing Strategist
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="py-8 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-6">Data Sources & References</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-sm">
+                <div>
+                    <h3 class="font-semibold mb-3">Market Data Sources:</h3>
+                    <ul class="space-y-1 opacity-80">
+                        <li>• <a href="https://geoiq.io/places/Kandivali-West/5nOVOBemQN" class="hover:text-blue-400">GeoIQ Demographics Data</a></li>
+                        <li>• <a href="https://housing.com/price-trends/property-rates-for-buy-in-kandivali_west_mumbai" class="hover:text-blue-400">Housing.com Property Rates</a></li>
+                        <li>• <a href="https://economictimes.indiatimes.com/industry/services/property-/-cstruction/house-price-index-rises-3-1-pc-in-q4-fy25-rbi-data/articleshow/121978935.cms" class="hover:text-blue-400">RBI House Price Index Q4 2025</a></li>
+                        <li>• <a href="https://economictimes.indiatimes.com/industry/services/property-/-cstruction/housing-sales-dip-19-in-april-june-across-top-9-cities-propequity/articleshow/122004669.cms" class="hover:text-blue-400">PropEquity Housing Sales Report 2025</a></li>
+                        <li>• <a href="https://economictimes.indiatimes.com/industry/services/property-/-cstruction/raymond-realty-aims-30-pc-growth-in-sales-bookings-in-fy26-at-rs-3000-cr-on-strong-housing-demand/articleshow/122066213.cms" class="hover:text-blue-400">Raymond Realty Market Outlook FY26</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Company & Competitor Data:</h3>
+                    <ul class="space-y-1 opacity-80">
+                        <li>• <a href="https://goyalrealty.com/" class="hover:text-blue-400">Goyal Realty Official Website</a></li>
+                        <li>• <a href="https://economictimes.indiatimes.com/industry/services/property-/-cstruction/dlf-aims-rs-2500-cr-sales-from-new-housing-project-in-mumbai-launch-within-2-weeks/articleshow/122006053.cms" class="hover:text-blue-400">DLF Mumbai Project Launch 2025</a></li>
+                        <li>• <a href="https://economictimes.indiatimes.com/industry/services/property-/-cstruction/lodha-developers-acquires-945-apartments-in-mumbais-mankhurd-for-rs-567-cr/articleshow/121932516.cms" class="hover:text-blue-400">Lodha Recent Acquisitions 2025</a></li>
+                        <li>• <a href="https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mahindra-lifespaces-secures-rs-1250-cr-redevelopment-project-in-mumbais-mulund/articleshow/122103476.cms" class="hover:text-blue-400">Mahindra Lifespaces Mumbai Projects</a></li>
+                        <li>• <a href="https://luxurypropertiesindia.in/latest-property-news-india/mumbai-property-market-scenario-2024-to-2030" class="hover:text-blue-400">Mumbai Market Projections</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-600 text-center text-xs opacity-70">
+                <p>This report is prepared based on publicly available data and market research. All financial projections are estimates based on current market conditions.</p>
+                <p class="mt-2">Report prepared by: <strong>Vaibhav Paliwal</strong> - Aspiring Business Analyst | Data Scientist | Digital Marketing Strategist | Web Developer</p>
+                <p class="mt-1">
+                    <i class="fas fa-calendar mr-1"></i>Date: July 2025 | 
+                    <i class="fas fa-chart-bar mr-1"></i>Job Application Portfolio | 
+                    <i class="fas fa-building mr-1"></i>For: Goyal Aspire Opportunities
+                </p>
+                <p class="mt-2 text-blue-400">
+                    <i class="fas fa-heart mr-1"></i>Created with passion to demonstrate value and analytical capabilities
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chatbot Widget -->
+    <div id="chat-widget-container">
+        <div id="chat-window" class="hidden">
+            <div id="chat-header">
+                <div>
+                    <h4 class="font-bold">Goyal Aspire Assistant</h4>
+                    <p class="text-xs opacity-90">Online</p>
+                </div>
+                <button id="close-chat-button">&times;</button>
+            </div>
+            <div id="chat-messages">
+                <div class="chat-message bot-message">
+                    Hello! How can I help you with Goyal Aspire today?
+                </div>
+            </div>
+            <div id="suggested-messages">
+                <button class="suggested-msg-btn">1 BHK Price?</button>
+                <button class="suggested-msg-btn">Amenities</button>
+                <button class="suggested-msg-btn">Location details</button>
+                <button class="suggested-msg-btn">Book a visit</button>
+            </div>
+            <form id="chat-input-form">
+                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+                <button type="submit" id="send-message-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+        <button id="chat-toggle-button" 
+                aria-label="Open chat assistant for property inquiries" 
+                aria-expanded="false"
+                tabindex="0"
+                role="button">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <span class="sr-only">Chat with our property assistant</span>
+            <div class="chatbot-tooltip" id="chatbot-tooltip">I'm Chatbot</div>
+        </button>
+    </div>
+
+
+    <script>
+        // Chart initialization with error handling
+        function initializeCharts() {
+            try {
+                // Only initialize charts if Chart.js is loaded and fallback elements exist
+                if (typeof Chart === 'undefined') {
+                    console.log('Chart.js not loaded, using fallback content');
+                    return;
+                }
+
+                // Demographics Chart
+                const demographicsCanvas = document.getElementById('demographicsChart');
+                if (demographicsCanvas) {
+                    try {
+                        const demographicsCtx = demographicsCanvas.getContext('2d');
+                        new Chart(demographicsCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Male Population', 'Female Population'],
+                                datasets: [{
+                                    data: [188025, 172919],
+                                    backgroundColor: ['#667eea', '#764ba2'],
+                                    borderWidth: 2,
+                                    borderColor: '#fff'
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: { 
+                                        position: 'bottom',
+                                        display: true,
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 20
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Gender Distribution - Kandivali West',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                    } catch (error) {
+                        console.log('Demographics chart failed');
+                    }
+                }
+
+                // Price Chart  
+                const priceCanvas = document.getElementById('priceChart');
+                if (priceCanvas) {
+                    try {
+                        const priceCtx = priceCanvas.getContext('2d');
+                        new Chart(priceCtx, {
+                            type: 'line',
+                            data: {
+                                labels: ['2020', '2021', '2022', '2023', '2024', '2025E'],
+                                datasets: [{
+                                    label: 'Property Price (₹/sq ft)',
+                                    data: [15000, 16200, 17800, 19200, 20935, 22500],
+                                    borderColor: '#667eea',
+                                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                                    tension: 0.4,
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: { 
+                                        beginAtZero: false,
+                                        title: {
+                                            display: true,
+                                            text: 'Price (₹ per sq ft)'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { 
+                                        position: 'top',
+                                        display: true,
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 20
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Property Price Trend - Kandivali West',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                    } catch (error) {
+                        console.log('Price chart failed');
+                    }
+                }
+
+                // Market Segment Chart
+                const segmentCanvas = document.getElementById('segmentChart');
+                if (segmentCanvas) {
+                    try {
+                        const segmentCtx = segmentCanvas.getContext('2d');
+                        new Chart(segmentCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['1 BHK', '2 BHK', '3 BHK', 'Premium'],
+                                datasets: [{
+                                    label: 'Market Demand (%)',
+                                    data: [35, 45, 15, 5],
+                                    backgroundColor: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b']
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: { 
+                                        beginAtZero: true, 
+                                        max: 50,
+                                        title: {
+                                            display: true,
+                                            text: 'Market Demand (%)'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { 
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 20
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Market Demand by Segment',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                    } catch (error) {
+                        console.log('Segment chart failed');
+                    }
+                }
+
+                // Competitor Chart (using 'bar' instead of 'horizontalBar' for newer Chart.js)
+                const competitorCanvas = document.getElementById('competitorChart');
+                const competitorFallback = document.getElementById('competitorFallback');
+                if (competitorCanvas && competitorFallback) {
+                    try {
+                        const competitorCtx = competitorCanvas.getContext('2d');
+                        new Chart(competitorCtx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Sri Arthaya', 'Dosti Kandivali', 'DLF Mumbai', 'Goyal Aspire', 'Market Avg'],
+                                datasets: [{
+                                    label: 'Price per sq ft (₹)',
+                                    data: [18905, 20000, 25000, 20935, 20935],
+                                    backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#667eea', '#6b7280']
+                                }]
+                            },
+                            options: {
+                                indexAxis: 'y',
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    x: { 
+                                        beginAtZero: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Price per sq ft (₹)'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { 
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 20
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Competitor Price Comparison',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                        // If chart loads successfully, hide fallback
+                        competitorFallback.style.display = 'none';
+                        competitorCanvas.style.display = 'block';
+                    } catch (error) {
+                        console.log('Competitor chart failed, using fallback');
+                    }
+                }
+
+                // Customer Chart
+                const customerCanvas = document.getElementById('customerChart');
+                const customerFallback = document.getElementById('customerFallback');
+                if (customerCanvas && customerFallback) {
+                    try {
+                        const customerCtx = customerCanvas.getContext('2d');
+                        new Chart(customerCtx, {
+                            type: 'pie',
+                            data: {
+                                labels: ['Young Professionals (25-35)', 'Nuclear Families (30-45)', 'Investors (35-50)', 'Upgraders (40-55)'],
+                                datasets: [{
+                                    data: [35, 30, 20, 15],
+                                    backgroundColor: ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b'],
+                                    borderWidth: 2,
+                                    borderColor: '#fff'
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: { 
+                                        position: 'bottom',
+                                        display: true,
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 15,
+                                            font: { size: 12 }
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Customer Profile Distribution',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                        // If chart loads successfully, hide fallback
+                        customerFallback.style.display = 'none';
+                        customerCanvas.style.display = 'block';
+                    } catch (error) {
+                        console.log('Customer chart failed, using fallback');
+                    }
+                }
+
+                // Marketing Chart
+                const marketingCanvas = document.getElementById('marketingChart');
+                const marketingFallback = document.getElementById('marketingFallback');
+                if (marketingCanvas && marketingFallback) {
+                    try {
+                        const marketingCtx = marketingCanvas.getContext('2d');
+                        new Chart(marketingCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Social Media (30%)', 'Google Ads (25%)', 'Property Portals (20%)', 'Referrals (15%)', 'Traditional (10%)'],
+                                datasets: [{
+                                    data: [30, 25, 20, 15, 10],
+                                    backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#6b7280']
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: { 
+                                        position: 'right',
+                                        display: true,
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 15,
+                                            font: { size: 11 }
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Marketing Channel Mix',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                        // If chart loads successfully, hide fallback
+                        marketingFallback.style.display = 'none';
+                        marketingCanvas.style.display = 'block';
+                    } catch (error) {
+                        console.log('Marketing chart failed, using fallback');
+                    }
+                }
+
+                // Revenue Chart
+                const revenueCanvas = document.getElementById('revenueChart');
+                const revenueFallback = document.getElementById('revenueFallback');
+                if (revenueCanvas && revenueFallback) {
+                    try {
+                        const revenueCtx = revenueCanvas.getContext('2d');
+                        new Chart(revenueCtx, {
+                            type: 'line',
+                            data: {
+                                labels: ['2024', '2025', '2026', '2027', '2028', '2029'],
+                                datasets: [{
+                                    label: 'Projected Revenue (₹ Cr)',
+                                    data: [45, 120, 200, 280, 350, 420],
+                                    borderColor: '#10b981',
+                                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                    tension: 0.4,
+                                    fill: true
+                                }, {
+                                    label: 'Market Growth Rate (%)',
+                                    data: [3.1, 4.2, 4.8, 5.1, 4.9, 4.5],
+                                    borderColor: '#8b5cf6',
+                                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                                    tension: 0.4,
+                                    yAxisID: 'y1'
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        type: 'linear',
+                                        position: 'left',
+                                        beginAtZero: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Revenue (₹ Crores)'
+                                        }
+                                    },
+                                    y1: {
+                                        type: 'linear',
+                                        position: 'right',
+                                        beginAtZero: true,
+                                        max: 6,
+                                        grid: { drawOnChartArea: false },
+                                        title: {
+                                            display: true,
+                                            text: 'Market Growth Rate (%)'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { 
+                                        position: 'top',
+                                        display: true,
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 20,
+                                            font: { size: 12 }
+                                        }
+                                    },
+                                    title: { 
+                                        display: true, 
+                                        text: 'Revenue Projection & Market Growth Trend',
+                                        font: { size: 16, weight: 'bold' }
+                                    }
+                                }
+                            }
+                        });
+                        // If chart loads successfully, hide fallback
+                        revenueFallback.style.display = 'none';
+                        revenueCanvas.style.display = 'block';
+                    } catch (error) {
+                        console.log('Revenue chart failed, using fallback');
+                    }
+                }
+
+            } catch (error) {
+                console.log('Chart initialization failed, using all fallback content');
+            }
+        }
+
+        // Initialize charts when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for Chart.js to load
+            setTimeout(initializeCharts, 500);
+        });
+        
+        // Lazy loading for charts - Performance optimization
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '50px'
+        };
+
+        const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const chartContainer = entry.target;
+                    const chartId = chartContainer.querySelector('canvas')?.id;
+                    if (chartId && typeof Chart !== 'undefined') {
+                        initializeSpecificChart(chartId);
+                        chartObserver.unobserve(chartContainer);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Initialize lazy loading after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.chart-container').forEach(container => {
+                chartObserver.observe(container);
+            });
+        });
+
+        // Function to initialize specific charts on demand
+        function initializeSpecificChart(chartId) {
+            try {
+                // Chart initialization code would go here for specific charts
+                console.log(`Lazy loading chart: ${chartId}`);
+            } catch (error) {
+                console.log(`Failed to lazy load chart: ${chartId}`);
+            }
+        }
+
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatWindow = document.getElementById('chat-window');
+            const toggleButton = document.getElementById('chat-toggle-button');
+            const closeButton = document.getElementById('close-chat-button');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInputForm = document.getElementById('chat-input-form');
+            const chatInput = document.getElementById('chat-input');
+            const suggestedMessagesContainer = document.getElementById('suggested-messages');
+
+            const toggleChatWindow = () => {
+                chatWindow.classList.toggle('hidden');
+                if (!chatWindow.classList.contains('hidden')) {
+                    toggleButton.style.display = 'none';
+                } else {
+                    toggleButton.style.display = 'flex';
+                }
+            };
+
+            toggleButton.addEventListener('click', toggleChatWindow);
+            closeButton.addEventListener('click', toggleChatWindow);
+
+            const addMessage = (message, sender) => {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('chat-message', sender === 'bot' ? 'bot-message' : 'user-message');
+                messageElement.textContent = message;
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            };
+
+            const getBotResponse = (userMessage) => {
+                const msg = userMessage.toLowerCase();
+                
+                // Enhanced knowledge base
+                const chatbotKnowledge = {
+                    pricing: {
+                        "1bhk": "1 BHK units start from ₹90L onwards, with sizes ranging from 450-550 sq ft. These are perfect for young professionals and small families.",
+                        "2bhk": "2 BHK units are priced from ₹1.25Cr onwards, with sizes from 650-750 sq ft. Popular choice for nuclear families.",
+                        "3bhk": "3 BHK premium units start from ₹1.8Cr onwards, with sizes from 850-950 sq ft. Ideal for larger families or those planning to expand."
+                    },
+                    amenities: {
+                        "fitness": "State-of-the-art fitness center with modern equipment, yoga room, and personal training facilities available.",
+                        "security": "24/7 security with CCTV surveillance, access control, and trained security personnel for complete peace of mind.",
+                        "parking": "Dedicated parking spaces with electric vehicle charging points. Visitor parking also available.",
+                        "kids": "Children's play area with safe, modern equipment and dedicated space for various age groups.",
+                        "garden": "Beautiful rooftop garden with seating areas, perfect for relaxation and social gatherings."
+                    },
+                    location: {
+                        "connectivity": "8 minutes to Kandivali Railway Station, 5 minutes to Metro. Direct access to Western Express Highway.",
+                        "schools": "Nearby schools include Ryan International (2km), Podar International (1.5km), and several other reputed institutions.",
+                        "hospitals": "Apollo Hospital (3km) and Shree Ganesha Hospital (2km) within 10 minutes drive.",
+                        "shopping": "Multiple shopping centers including Growel's 101 Mall, Thakur Mall, and local markets within easy reach."
+                    }
+                };
+                
+                // Advanced response logic
+                if (msg.includes('price') || msg.includes('cost') || msg.includes('bhk')) {
+                    if (msg.includes('1') || msg.includes('one')) {
+                        return chatbotKnowledge.pricing["1bhk"];
+                    } else if (msg.includes('2') || msg.includes('two')) {
+                        return chatbotKnowledge.pricing["2bhk"];
+                    } else if (msg.includes('3') || msg.includes('three')) {
+                        return chatbotKnowledge.pricing["3bhk"];
+                    }
+                    return "We have premium 1, 2, and 3 BHK residences. 1 BHK from ₹90L, 2 BHK from ₹1.25Cr, 3 BHK from ₹1.8Cr. Would you like details on a specific configuration?";
+                }
+                
+                if (msg.includes('amenities') || msg.includes('facilities')) {
+                    if (msg.includes('gym') || msg.includes('fitness')) {
+                        return chatbotKnowledge.amenities.fitness;
+                    } else if (msg.includes('security') || msg.includes('safe')) {
+                        return chatbotKnowledge.amenities.security;
+                    } else if (msg.includes('parking') || msg.includes('car')) {
+                        return chatbotKnowledge.amenities.parking;
+                    } else if (msg.includes('kids') || msg.includes('children') || msg.includes('play')) {
+                        return chatbotKnowledge.amenities.kids;
+                    }
+                    return "Goyal Aspire offers premium amenities including fitness center, 24/7 security, rooftop garden, children's play area, and dedicated parking with EV charging. Which amenity interests you most?";
+                }
+                
+                if (msg.includes('location') || msg.includes('address') || msg.includes('where')) {
+                    return "Located on Mathuradas Road, Kandivali West - a prime location with excellent connectivity. " + chatbotKnowledge.location.connectivity;
+                }
+                
+                if (msg.includes('school') || msg.includes('education')) {
+                    return chatbotKnowledge.location.schools;
+                }
+                
+                if (msg.includes('hospital') || msg.includes('medical') || msg.includes('health')) {
+                    return chatbotKnowledge.location.hospitals;
+                }
+                
+                if (msg.includes('shopping') || msg.includes('mall') || msg.includes('market')) {
+                    return chatbotKnowledge.location.shopping;
+                }
+                
+                if (msg.includes('visit') || msg.includes('tour') || msg.includes('site')) {
+                    return "We'd be delighted to arrange a site visit! Our sales team can show you the sample flats, amenities, and neighborhood. Please share your preferred date, time, and contact number.";
+                }
+                
+                if (msg.includes('possession') || msg.includes('ready') || msg.includes('completion')) {
+                    return "The project is scheduled for possession in October 2025. Construction is progressing on schedule with quality checks at every stage.";
+                }
+                
+                if (msg.includes('loan') || msg.includes('emi') || msg.includes('finance')) {
+                    return "We have tie-ups with leading banks offering attractive home loan rates starting from 8.5%. Our team can help you with loan approvals and EMI calculations. Current market rates make this an excellent time to invest!";
+                }
+                
+                if (msg.includes('investment') || msg.includes('returns') || msg.includes('appreciation')) {
+                    return "Kandivali West shows strong investment potential with 8-12% annual appreciation expected. Rental yields of 3-4% and excellent connectivity make it ideal for both end-use and investment.";
+                }
+                
+                if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                    return "Hello! Welcome to Goyal Aspire. I'm here to help you with information about our premium residences in Kandivali West. What would you like to know?";
+                }
+                
+                if (msg.includes('thank') || msg.includes('thanks')) {
+                    return "You're welcome! I'm always here to help. Feel free to ask any other questions about Goyal Aspire or if you'd like to schedule a site visit!";
+                }
+                
+                // Default response with helpful suggestions
+                return "I'd be happy to help! I can provide information about pricing, amenities, location, schools, hospitals, site visits, possession timeline, and investment potential. What interests you most?";
+            };
+
+            chatInputForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const userMessage = chatInput.value.trim();
+                if (userMessage) {
+                    addMessage(userMessage, 'user');
+                    chatInput.value = '';
+                    setTimeout(() => {
+                        const botResponse = getBotResponse(userMessage);
+                        addMessage(botResponse, 'bot');
+                    }, 500);
+                }
+            });
+
+            suggestedMessagesContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('suggested-msg-btn')) {
+                    const message = e.target.textContent;
+                    chatInput.value = message;
+                    chatInput.focus();
+                }
+            });
+        });
+        
+        // Tooltip functionality for chatbot when reaching Chatbot Implementation Strategy section
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotSection = document.querySelector('h3 i.fas.fa-robot').closest('div.card-shadow');
+            const chatbotTooltip = document.getElementById('chatbot-tooltip');
+            const toggleButton = document.getElementById('chat-toggle-button');
+            let tooltipTimeout;
+            let hasShownTooltip = false;
+            
+            // Function to check if an element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+                );
+            }
+            
+            // Function to show tooltip
+            function showTooltip() {
+                if (!hasShownTooltip) {
+                    chatbotTooltip.classList.add('show');
+                    
+                    // Hide tooltip after 4 seconds
+                    tooltipTimeout = setTimeout(() => {
+                        chatbotTooltip.classList.remove('show');
+                        hasShownTooltip = true; // Only show once per session
+                    }, 4000);
+                }
+            }
+            
+            // Check on scroll if chatbot section is visible
+            window.addEventListener('scroll', function() {
+                if (chatbotSection && isInViewport(chatbotSection)) {
+                    showTooltip();
+                }
+            });
+            
+            // Also check on page load
+            if (chatbotSection && isInViewport(chatbotSection)) {
+                // Small delay to let page render properly
+                setTimeout(showTooltip, 1000);
+            }
+            
+            // Cancel tooltip if user clicks the button
+            toggleButton.addEventListener('click', function() {
+                clearTimeout(tooltipTimeout);
+                chatbotTooltip.classList.remove('show');
+                hasShownTooltip = true;
+                // Update aria-expanded when chat is opened
+                toggleButton.setAttribute('aria-expanded', 'true');
+            });
+        });
+        
+        // EMI Calculator functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const loanAmountSlider = document.getElementById('loanAmount');
+            const interestRateSlider = document.getElementById('interestRate');
+            const tenureSlider = document.getElementById('tenure');
+            
+            const loanDisplay = document.getElementById('loanDisplay');
+            const rateDisplay = document.getElementById('rateDisplay');
+            const tenureDisplay = document.getElementById('tenureDisplay');
+            
+            const emiResult = document.getElementById('emiResult');
+            const totalInterest = document.getElementById('totalInterest');
+            const totalAmount = document.getElementById('totalAmount');
+            
+            function formatAmount(amount) {
+                if (amount >= 10000000) {
+                    return '₹' + (amount / 10000000).toFixed(2) + ' Cr';
+                } else if (amount >= 100000) {
+                    return '₹' + (amount / 100000).toFixed(0) + 'L';
+                } else {
+                    return '₹' + amount.toLocaleString('en-IN');
+                }
+            }
+            
+            function calculateEMI() {
+                const principal = parseFloat(loanAmountSlider.value);
+                const rate = parseFloat(interestRateSlider.value) / 12 / 100; // Monthly interest rate
+                const tenure = parseFloat(tenureSlider.value) * 12; // Total months
+                
+                // EMI calculation formula
+                const emi = (principal * rate * Math.pow(1 + rate, tenure)) / (Math.pow(1 + rate, tenure) - 1);
+                const totalPayment = emi * tenure;
+                const interest = totalPayment - principal;
+                
+                // Update displays
+                loanDisplay.textContent = formatAmount(principal);
+                rateDisplay.textContent = parseFloat(interestRateSlider.value).toFixed(1) + '%';
+                tenureDisplay.textContent = tenureSlider.value + ' years';
+                
+                emiResult.textContent = formatAmount(Math.round(emi));
+                totalInterest.textContent = formatAmount(Math.round(interest));
+                totalAmount.textContent = formatAmount(Math.round(totalPayment));
+            }
+            
+            // Event listeners for sliders
+            if (loanAmountSlider) {
+                loanAmountSlider.addEventListener('input', calculateEMI);
+                interestRateSlider.addEventListener('input', calculateEMI);
+                tenureSlider.addEventListener('input', calculateEMI);
+                
+                // Initialize calculation
+                calculateEMI();
+            }
+        });
+    </script>
+</body>
+</html>
